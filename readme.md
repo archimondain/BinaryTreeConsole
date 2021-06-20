@@ -1,5 +1,5 @@
 # Purpose
-It displays a binary on the console.
+It displays a binary tree on the console.
 
 # Usage
 ````java
