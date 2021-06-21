@@ -103,7 +103,9 @@ public class Node{
 	public void display() {
 		LinkedList<DisplayInfos> list = new LinkedList<DisplayInfos>();
 		
-		list.add(new DisplayInfos(this, this.countLeftOffset(), 0, 0, true));
+		list.add(new DisplayInfos(
+      this, this.countLeftOffset(), 0, 0, true
+    ));
 		int cur_offset = 0;		
 		int lastposy = 0;
 		while (!list.isEmpty()) {
@@ -127,21 +129,37 @@ public class Node{
 			if (n.nbbranche == 0) {
 				System.out.print(n.node.val);
 				if (n.node.leftChild != null) {
-					int nbbranche = n.node.leftChild.countRightOffset()+Math.max(n.node.leftChild.width()/2, 1);
-					list.add(new DisplayInfos(n.node.leftChild, n.posx - 1, n.posy+1, nbbranche, true));
+					int nbbranche = 
+            n.node.leftChild.countRightOffset() + 
+            Math.max(n.node.leftChild.width()/2, 1);
+					list.add(new DisplayInfos(
+            n.node.leftChild, n.posx - 1, n.posy+1, 
+            nbbranche, true
+          ));
 				}
 				
 				if (n.node.rightChild != null) {
-					int nbbranche = n.node.rightChild.countLeftOffset()+Math.max(n.node.rightChild.width()/2, 1);
-					list.add(new DisplayInfos(n.node.rightChild, n.posx + n.width(), n.posy+1, nbbranche, false));
+					int nbbranche = 
+            n.node.rightChild.countLeftOffset() + 
+            Math.max(n.node.rightChild.width()/2, 1);
+					list.add(new DisplayInfos(
+            n.node.rightChild, n.posx + n.width(), n.posy+1, 
+            nbbranche, false
+          ));
 				}
 			} else {
 				if (n.left) {
 					System.out.print("/");
-					list.add(new DisplayInfos(n.node, n.posx - 1, n.posy+1, n.nbbranche - 1, n.left));
+					list.add(new DisplayInfos(
+            n.node, n.posx - 1, n.posy+1, 
+            n.nbbranche - 1, n.left
+          ));
 				} else {
 					System.out.print("\\");
-					list.add(new DisplayInfos(n.node, n.posx + 1, n.posy+1, n.nbbranche - 1, n.left));
+					list.add(new DisplayInfos(
+            n.node, n.posx + 1, n.posy+1, 
+            n.nbbranche - 1, n.left
+          ));
 				}				
 			}
 			cur_offset += n.width();
