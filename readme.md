@@ -1,5 +1,5 @@
 # Purpose
-It displays a binary on the console.
+It displays a binary tree on the console.
 
 # Usage
 ````java
@@ -8,7 +8,7 @@ n.display();
 ````
 
 # Algorithm
-Most of the algorithms I've seen display an optimized tree in width, given that all nodes on the same height.
+Most of the algorithms I've seen display an optimized tree in width, given that all nodes are at the same height.
 This one is different : it displays all the nodes at optimum height, given that the left subtree of a node is completely at his left, and given that the right subtree of a node is completely at his right.
 
 
